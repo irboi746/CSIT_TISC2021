@@ -18,3 +18,8 @@
 * Looked into the Hex Editor for "picture_with_text.jpg" text string and saw something suspicious : "PK"
 * Used binwalk to extract, xxd to look into the binaries of the unzipped file again and saw it... A suspicious looking message. 
 * Cyberchef ROT 13 and FLAG:   
+
+### Windows10.ova File
+#### 
+1. 
+2. 
