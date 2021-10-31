@@ -21,5 +21,9 @@
 
 ### Windows10.ova File
 #### 
-1. 
-2. 
+1. Name of the User : Windows Search --> System Information --> Flag: {TISC:Adam}
+2. LastLogonTime : --> EventViewer --> Filter Event 4624 --> Look out for Logon Type : 2
+3. Download 7zip --> move into vm --> install 7zip in vm --> open archive Flag : 
+4. go to cmd --> wmic useraccounts get sid,name Flag : 
+5. Use Nirsoft BrowsingHistoryView --> 2-0-0
+6. https://docs.microsoft.com/en-us/troubleshoot/windows-server/networking/mapped-network-drive-disconnected
