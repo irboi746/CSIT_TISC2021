@@ -1,17 +1,17 @@
 # CSIT_TISC2021
 ## Level 1
-### File1.wav
+### Challenge 1 : File1.wav
 * Morse code hidden in the file. 
 * Use Sonic Visualiser to open .wav file and the morse code appears.
 * Flag : 
 
-### File2.jpg
+### Challenge 2 : File2.jpg
 * Information Hidden in the metadata. 
 * Tricky things is when it is downloaded, photo is modified. 
 * Hence we will need to use online exif tool to extract metadata from image url.
 * Flag : 
 
-### File3.jpg
+### Challenge 3 : File3.jpg
 * Used exiftool online --> no metadata
 * Used HxD to strings to see any text hidden within the file. 
 * Notable Strings 2 x "picture_with_text.jpg"
@@ -19,11 +19,28 @@
 * Used binwalk to extract, xxd to look into the binaries of the unzipped file again and saw it... A suspicious looking message. 
 * Cyberchef ROT 13 and FLAG:   
 
-### Windows10.ova File
-#### 
-1. Name of the User : Windows Search --> System Information --> Flag: {TISC:Adam}
-2. LastLogonTime : --> EventViewer --> Filter Event 4624 --> Look out for Logon Type : 2
-3. Download 7zip --> move into vm --> install 7zip in vm --> open archive Flag : 
-4. go to cmd --> wmic useraccounts get sid,name Flag : 
-5. Use Nirsoft BrowsingHistoryView --> 2-0-0
-6. https://docs.microsoft.com/en-us/troubleshoot/windows-server/networking/mapped-network-drive-disconnected
+## Windows10.ova File
+### Challenge 4 : What is the name of the user?
+Windows Search --> System Information --> Flag: {TISC:Adam}
+
+### Challenge 5 : Which time was the user's most recent logon? Convert it UTC before submitting.
+--> EventViewer --> Filter Event 4624 --> Look out for Logon Type : 2
+
+### Challenge 6 : A 7z archive was deleted, what is the value of the file CRC32 hash that is inside the 7z archive?
+Download 7zip --> move into vm --> install 7zip in vm --> open archive Flag : 
+
+### Challenge 7 : Question1: How many users have an RID of 1000 or above on the machine? What is the account name for RID of 501? What is the account name for RID of 503?
+go to cmd --> wmic useraccounts get sid,name Flag 
+
+### Challenge 8 : Question1: How many times did the user visit https://www.csit.gov.sg/about-csit/who-we-are ? How many times did the user visit https://www.facebook.com ? How many times did the user visit https://www.live.com ?
+Use Nirsoft BrowsingHistoryView 
+
+### Challenge 9 : A device with the drive letter “Z” was connected as a shared folder in VirtualBox. What was the label of the volume? Perhaps the registry can tell us the "connected" drive?
+https://docs.microsoft.com/en-us/troubleshoot/windows-server/networking/mapped-network-drive-disconnected
+
+### Challenge 10 : A file with SHA1 0D97DBDBA2D35C37F434538E4DFAA06FCCC18A13 is in the VM… somewhere. What is the name of the file that is of interest?
+
+## Level 2
+### DEE-NA-SEE as a need Part 1
+### DEE-NA-SEE as a need Part 2
+
