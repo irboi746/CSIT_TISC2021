@@ -41,6 +41,12 @@ https://docs.microsoft.com/en-us/troubleshoot/windows-server/networking/mapped-n
 ### Challenge 10 : A file with SHA1 0D97DBDBA2D35C37F434538E4DFAA06FCCC18A13 is in the VM… somewhere. What is the name of the file that is of interest?
 
 ## Level 2
+Open pcap --> saw a pattern d33d(2 digit)(7char)
+split 2 digit and 7 char
 ### DEE-NA-SEE as a need Part 1
+hint : 2 digit part
 ### DEE-NA-SEE as a need Part 2
+take the python script output and throw into cyberchef
+
+
 
