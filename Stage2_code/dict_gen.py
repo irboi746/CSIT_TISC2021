@@ -1,4 +1,4 @@
-#written in python3 
+# written in python3, used to generate characters for dictionary file
 x = 97
 y = 37
 while x < 128:
