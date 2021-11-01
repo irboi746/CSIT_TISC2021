@@ -1,3 +1,4 @@
+#used to separate the specific offset from the extracted dns text
 with open('D:\\Desktop\\out.txt', 'r') as input:
     with open('D:\\Desktop\\out0.txt', 'w') as output:
         for line in input:
