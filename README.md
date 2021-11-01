@@ -41,6 +41,7 @@ https://docs.microsoft.com/en-us/troubleshoot/windows-server/networking/mapped-n
 ### Challenge 10 : A file with SHA1 0D97DBDBA2D35C37F434538E4DFAA06FCCC18A13 is in the VM… somewhere. What is the name of the file that is of interest?
 
 ## Level 2
+### We have detected and captured a stream of anomalous DNS network traffic sent out from one of the PALINDROME compromised servers. None of the domain names found are active. Either PALINDROME had shut them down or there's more to it than it seems. This level contains 2 flags and both flags can be found independently from the same pcap file as attached here.
 Open pcap --> saw a pattern d33d(2 digit)(7char)
 split 2 digit and 7 char
 ### DEE-NA-SAW as a need Part 2
