@@ -1,3 +1,4 @@
+#used to substitute the numbers found for part 2 to char
 d_dict = {
         '01' : 'A','02' : 'B','03' : 'C','04' : 'D','05' : 'E','06' : 'F',
         '07' : 'G','08' : 'H','09' : 'I','10' : 'J','11' : 'K','12' : 'L',
