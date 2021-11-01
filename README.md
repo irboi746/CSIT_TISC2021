@@ -43,10 +43,19 @@ https://docs.microsoft.com/en-us/troubleshoot/windows-server/networking/mapped-n
 ## Level 2
 Open pcap --> saw a pattern d33d(2 digit)(7char)
 split 2 digit and 7 char
-### DEE-NA-SEE as a need Part 1
-hint : 2 digit part
-### DEE-NA-SEE as a need Part 2
+### DEE-NA-SAW as a need Part 2
 take the python script output and throw into cyberchef
+* DEE-NA-SAW part 2 has a peculiar string ***"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz+/"***
+### DEE-NA-SEE as a need Part 1
+* string saw above is the decoder for Part 1.
+* wrote a python script to do a substitution for above string with the 2 digit numbers in part 1 (attached in this repo)
+* found out that the substituted cipher is a base64 encoded data and base64 is in the form of the above ***string***
+* throw into cyberchef to decode base64 with custom string
+* saw PK file extension
+* extract as zip file ---> "What you Seek is within"
+* Flag : 
+
+
 
 
 
