@@ -57,6 +57,7 @@ take the python script output and throw into cyberchef
 * Flag : 
 
 ## Level 3
+### An attack was detected on an internal network that blocked off all types of executable files. How did this happen? Upon further investigations, we recovered these 2 grey-scale images. What could they be?
 * Downloaded the two bmp images and straight out threw it into cyberchef
 * Content of 1.bmp
 * Content of 2.bmp
@@ -65,11 +66,28 @@ take the python script output and throw into cyberchef
 ### One day, the admin of Apple Story Pte Ltd received an anonymous email.
 > Dear admins of Apple Story, We are PALINDROME. We have took control over your system and stolen your secret formula! Do not fear for we are only after the money.Pay us our demand and we will be gone. For starters, we have denied all controls from you. We demand a ransom of 1 BTC to be sent to 1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2 by 31 dec 2021. Do not contact the police or seek for help. Failure to do so and the plant is gone. We planted a monitoring kit so do not test us. Remember 1 BTC by 31 dec 2021 and we will be gone. Muahahahaha. Regards, PALINDROME
 ### Management have just one instruction. Retrieve the encryption key before the deadline and solve this.
-
 * since hint is free anyway, might as well check it right?
-* So... after some googling...
+(insert image here)
+* So... after some googling... Here are some possiblilities
+   1. https://www.riskiq.com/what-is-magecart/
+   2. https://heimdalsecurity.com/blog/magecart-group-conceal-stolen-credit-card-details-into-image-files/
+   3. https://thehackernews.com/2021/05/magecart-hackers-now-hide-php-based.html 
+* Checking out 1 : tried looking for javascripts that are running and see if there are any vulnerability. \
+  below is the only script that can be found, nothing vulnerable there. \
+  
+  Tried all the web attacks on the payment page. Nothing much from there
 
-* aaa
+* Checking out 2 : checking out the images within the website \
+nothing suspicious about the svg image. Hex output seems normal
+nothing suspicious about the gif. All looks normal, even after using hex editor to skim through and strings, nothing suspicious
+
+* Checking out 3 : checking the favicon of the website
+same procedure as images above which is to throw into cyberchef and look at the hex and... found these : \
+which led to this : 
+
+* Nice another webpage and it seems to be doing a POST request with a certain field.
+* 
+
 
 
 
