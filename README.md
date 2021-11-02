@@ -56,6 +56,20 @@ take the python script output and throw into cyberchef
 * extract as zip file ---> "What you Seek is within"
 * Flag : 
 
+## Level 3
+* Downloaded the two bmp images and straight out threw it into cyberchef
+* Content of 1.bmp
+* Content of 2.bmp
+
+## Level 4
+### One day, the admin of Apple Story Pte Ltd received an anonymous email.
+> Dear admins of Apple Story, We are PALINDROME. We have took control over your system and stolen your secret formula! Do not fear for we are only after the money.Pay us our demand and we will be gone. For starters, we have denied all controls from you. We demand a ransom of 1 BTC to be sent to 1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2 by 31 dec 2021. Do not contact the police or seek for help. Failure to do so and the plant is gone. We planted a monitoring kit so do not test us. Remember 1 BTC by 31 dec 2021 and we will be gone. Muahahahaha. Regards, PALINDROME
+### Management have just one instruction. Retrieve the encryption key before the deadline and solve this.
+
+* since hint is free anyway, might as well check it right?
+* So... after some googling...
+
+* aaa
 
 
 
