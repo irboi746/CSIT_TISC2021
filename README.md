@@ -61,6 +61,7 @@ take the python script output and throw into cyberchef
 * Downloaded the two bmp images and straight out threw it into cyberchef
 * Content of 1.bmp
 * Content of 2.bmp
+Online tool that helps extraction : https://stegonline.georgeom.net/extract
 
 ## Level 4
 ### One day, the admin of Apple Story Pte Ltd received an anonymous email.
