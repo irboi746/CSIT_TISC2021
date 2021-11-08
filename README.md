@@ -62,6 +62,7 @@ take the python script output and throw into cyberchef
 * Content of 1.bmp
 * Content of 2.bmp
 Online tool that helps extraction : https://stegonline.georgeom.net/extract
+Reference for PE format : https://stackoverflow.com/questions/34684660/how-to-determine-the-size-of-an-pe-executable-file-from-headers-and-or-footers
 
 ## Level 4
 ### One day, the admin of Apple Story Pte Ltd received an anonymous email.
