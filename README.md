@@ -2,23 +2,28 @@
 # CSIT_TISC2021
 ## Level 1
 ### Challenge 1 : File1.wav
-* Morse code hidden in the file. 
 * Use Sonic Visualiser to open .wav file and the morse code appears.
-* Flag : 
+[Morse_Code_In_File](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L1-file1_wav.JPG)
+* Flag : **CSITISLOCATEDINSCIENCEPARK**
 
 ### Challenge 2 : File2.jpg
 * Information Hidden in the metadata. 
 * Tricky things is when it is downloaded, photo is modified. 
 * Hence we will need to use online exif tool to extract metadata from image url.
-* Flag : 
+[EXIF](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L1-file2_jpg.JPG)
+* Flag : **2003:08:25 14:55:27**
 
 ### Challenge 3 : File3.jpg
-* Used exiftool online --> no metadata
-* Used HxD to strings to see any text hidden within the file. 
-* Notable Strings 2 x "picture_with_text.jpg"
-* Looked into the Hex Editor for "picture_with_text.jpg" text string and saw something suspicious : "PK"
-* Used binwalk to extract, xxd to look into the binaries of the unzipped file again and saw it... A suspicious looking message. 
-* Cyberchef ROT 13 and FLAG:   
+1.  Used exiftool online --> no metadata
+2.  Used HxD to strings to see any text hidden within the file. 
+3.  Notable Strings 2 x "picture_with_text.jpg"
+4.  Looked into the Hex Editor for "picture_with_text.jpg" text string and saw something suspicious : "PK"
+[HXD](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L1-file3_jpg_2_sus_pk_ext.JPG)
+* Used binwalk to extract and xxd to look into the binaries of the unzipped file again and saw it... A suspicious looking message.
+[BINWALK](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L1-file3_jpg_3_extracted.JPG)
+[XXD_OUT](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L1-file3_jpg_4_xxd.JPG)
+* Cyberchef ROT 13 and FLAG: **applecarrotpear**
+[FINAL](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L1-file3_jpg_5_cyberchef.JPG)   
 
 ## Windows10.ova File
 ### Challenge 4 : What is the name of the user?
