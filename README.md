@@ -37,12 +37,12 @@ Download 7zip --> move into vm --> install 7zip in vm --> open archive
 
 ### Challenge 7 : Question1: How many users have an RID of 1000 or above on the machine? What is the account name for RID of 501? What is the account name for RID of 503?
 go to cmd --> wmic useraccounts get sid,name --> flag 
-[wmic](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L1-challenge7_RID.JPG)
+![wmic](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L1-challenge7_RID.JPG)
 Flag : **1-Guest-DefaultAccount**
 
 ### Challenge 8 : Question1: How many times did the user visit https://www.csit.gov.sg/about-csit/who-we-are ? How many times did the user visit https://www.facebook.com ? How many times did the user visit https://www.live.com ?
 Use Nirsoft BrowsingHistoryView 
-!Browsing_Hist[](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L1-challenge8_BrowsingHistory.JPG)
+![Browsing_Hist](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L1-challenge8_BrowsingHistory.JPG)
 Flag : **2**
 
 ### Challenge 9 : A device with the drive letter “Z” was connected as a shared folder in VirtualBox. What was the label of the volume? Perhaps the registry can tell us the "connected" drive?
@@ -53,12 +53,12 @@ With reference to [this](https://docs.microsoft.com/en-us/troubleshoot/windows-s
 2. Right-click the mapped drive that you want to remove. For example, right-click `##Server_Name#Share_Name`, and then click Delete.
 ```
 The answer can be found at MountPoints2 \
-[MPt2](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L1-challenge9_MountPoints.JPG)
+![MPt2](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L1-challenge9_MountPoints.JPG)
 Flag : **VBoxSvr**
 
 ### Challenge 10 : A file with SHA1 0D97DBDBA2D35C37F434538E4DFAA06FCCC18A13 is in the VM… somewhere. What is the name of the file that is of interest?
 Using any tool online that can search files by hash.
-[FileFinder](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L1-challenge10_FileSearch_Hash.JPG)
+![FileFinder](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L1-challenge10_FileSearch_Hash.JPG)
 Flag : **otter-singapore.jpg**
 
 ## Level 2
@@ -84,6 +84,7 @@ take the python script output and throw into cyberchef
 * Content of 2.bmp
 Online tool that helps extraction : https://stegonline.georgeom.net/extract
 Reference for PE format : https://stackoverflow.com/questions/34684660/how-to-determine-the-size-of-an-pe-executable-file-from-headers-and-or-footers
+**Attempted but did not complete**
 
 ## Level 4
 ### One day, the admin of Apple Story Pte Ltd received an anonymous email.
