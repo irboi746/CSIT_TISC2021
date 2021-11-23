@@ -43,7 +43,7 @@ Flag : **1-Guest-DefaultAccount**
 ### Challenge 8 : Question1: How many times did the user visit https://www.csit.gov.sg/about-csit/who-we-are ? How many times did the user visit https://www.facebook.com ? How many times did the user visit https://www.live.com ?
 Use Nirsoft BrowsingHistoryView 
 ![Browsing_Hist](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L1-challenge8_BrowsingHistory.JPG)
-Flag : **2**
+Flag : **0-0-2**
 
 ### Challenge 9 : A device with the drive letter “Z” was connected as a shared folder in VirtualBox. What was the label of the volume? Perhaps the registry can tell us the "connected" drive?
 With reference to [this](https://docs.microsoft.com/en-us/troubleshoot/windows-server/networking/mapped-network-drive-disconnected): 
