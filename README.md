@@ -22,7 +22,7 @@
 * Used binwalk to extract and xxd to look into the binaries of the unzipped file again and saw it... A suspicious looking message.
 ![BINWALK](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L1-file3_jpg_3_extracted.JPG)
 ![XXD_OUT](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L1-file3_jpg_4_xxd.JPG)
-* Cyberchef ROT 13 and FLAG: **applecarrotpear**
+* Cyberchef ROT 13 and FLAG: **applecarrotpear** \
 ![FINAL](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L1-file3_jpg_5_cyberchef.JPG)   
 
 ## Windows10.ova File
@@ -30,21 +30,36 @@
 Windows Search --> System Information --> Flag: {TISC:Adam}
 
 ### Challenge 5 : Which time was the user's most recent logon? Convert it UTC before submitting.
---> EventViewer --> Filter Event 4624 --> Look out for Logon Type : 2
+EventViewer --> Filter Event 4624 --> Look out for Logon Type : 2 --> Flag
 
 ### Challenge 6 : A 7z archive was deleted, what is the value of the file CRC32 hash that is inside the 7z archive?
-Download 7zip --> move into vm --> install 7zip in vm --> open archive Flag : 
+Download 7zip --> move into vm --> install 7zip in vm --> open archive  
 
 ### Challenge 7 : Question1: How many users have an RID of 1000 or above on the machine? What is the account name for RID of 501? What is the account name for RID of 503?
-go to cmd --> wmic useraccounts get sid,name Flag 
+go to cmd --> wmic useraccounts get sid,name --> flag 
+[wmic](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L1-challenge7_RID.JPG)
+Flag : **1-Guest-DefaultAccount**
 
 ### Challenge 8 : Question1: How many times did the user visit https://www.csit.gov.sg/about-csit/who-we-are ? How many times did the user visit https://www.facebook.com ? How many times did the user visit https://www.live.com ?
 Use Nirsoft BrowsingHistoryView 
+!Browsing_Hist[](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L1-challenge8_BrowsingHistory.JPG)
+Flag : **2**
 
 ### Challenge 9 : A device with the drive letter “Z” was connected as a shared folder in VirtualBox. What was the label of the volume? Perhaps the registry can tell us the "connected" drive?
-https://docs.microsoft.com/en-us/troubleshoot/windows-server/networking/mapped-network-drive-disconnected
+With reference to [this](https://docs.microsoft.com/en-us/troubleshoot/windows-server/networking/mapped-network-drive-disconnected): 
+```
+1. In Registry Editor, locate the following registry subkey: HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\MountPoints2
+
+2. Right-click the mapped drive that you want to remove. For example, right-click `##Server_Name#Share_Name`, and then click Delete.
+```
+The answer can be found at MountPoints2 \
+[MPt2](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L1-challenge9_MountPoints.JPG)
+Flag : **VBoxSvr**
 
 ### Challenge 10 : A file with SHA1 0D97DBDBA2D35C37F434538E4DFAA06FCCC18A13 is in the VM… somewhere. What is the name of the file that is of interest?
+Using any tool online that can search files by hash.
+[FileFinder](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L1-challenge10_FileSearch_Hash.JPG)
+Flag : **otter-singapore.jpg**
 
 ## Level 2
 ### We have detected and captured a stream of anomalous DNS network traffic sent out from one of the PALINDROME compromised servers. None of the domain names found are active. Either PALINDROME had shut them down or there's more to it than it seems. This level contains 2 flags and both flags can be found independently from the same pcap file as attached here.
