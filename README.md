@@ -63,19 +63,34 @@ Flag : **otter-singapore.jpg**
 
 ## Level 2
 ### We have detected and captured a stream of anomalous DNS network traffic sent out from one of the PALINDROME compromised servers. None of the domain names found are active. Either PALINDROME had shut them down or there's more to it than it seems. This level contains 2 flags and both flags can be found independently from the same pcap file as attached here.
-Open pcap --> saw a pattern d33d(2 digit)(7char)
-split 2 digit and 7 char
+
+* Open pcap --> saw a pattern d33d(2 digit)(7char) in all the DNS packets.
+* It took me a while to realise that I will need to split 2 digit and 7 char
+* Therefore I used tshark to keep only the data field of the DNS packets and output them into a text file. 
+* A python [script](https://github.com/irboi746/CSIT_TISC2021/blob/main/Stage2_code/grep_cipher.py) was included in this repo to help split the tshark output.
 ### DEE-NA-SAW as a need Part 2
-take the python script output and throw into cyberchef
+* Using this python [script](https://github.com/irboi746/CSIT_TISC2021/blob/main/Stage2_code/grep_cipher.py), I extracted the 7char payload and pasted them into cyberchef.
+* The output is as follows : \
+![DNSoutput1](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L2Part2.jpg)
+* After using the cyberchef magic wand (auto-decode) function output is as follow : \
+![DNSoutput2](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L2Part2_2.JPG)
+Flag : **TISC{n3VEr_0dd_0r_Ev3n}**
 * DEE-NA-SAW part 2 has a peculiar string ***"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz+/"***
 ### DEE-NA-SAW as a need Part 1
-* string saw above is the decoder for Part 1.
-* wrote a python script to do a substitution for above string with the 2 digit numbers in part 1 (attached in this repo)
-* found out that the substituted cipher is a base64 encoded data and base64 is in the form of the above ***string***
-* throw into cyberchef to decode base64 with custom string
-* saw PK file extension
-* extract as zip file ---> "What you Seek is within"
-* Flag : 
+* First I realised that the numbers do not pass 64.
+* Hence I hypothesise that it has to be some form of substitution cipher.
+* Tried using ASCII table and different forms of substitution until... I remembered the string in Part2.
+* wrote a python [script](https://github.com/irboi746/CSIT_TISC2021/blob/main/Stage2_code/substitution.py) to do a substitution for above string with the 2 digit numbers in part 1 
+* suspects that the plaintext is a base64 encoded data 
+* again, I threw into cyberchef to decode base64 with custom string ***"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz+/"***
+![cyberchef_out](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/Stg2Pt1_CyberChef_decode.JPG)
+* Then I observed that there is a PK file extension
+* extract as zip file and saw there were various xml files. 
+* It seems like a word file but, I just opened them using the browser instead. 
+* Output is as follows : "What you Seek is within"
+![extracted1](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/Stg2Pt1_what_you_seek.JPG)
+![extracted2](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/Stg2Pt1_flag.JPG)
+* Flag : **TISC{1iv3_n0t_0n_3vi1}**
 
 ## Level 3
 ### An attack was detected on an internal network that blocked off all types of executable files. How did this happen? Upon further investigations, we recovered these 2 grey-scale images. What could they be?
