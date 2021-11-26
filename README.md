@@ -1,7 +1,7 @@
 # CSIT_TISC2021
 - [CSIT_TISC2021](#csit-tisc2021)
   * [Level 1](#level-1)
-    + [Challenge 1 : File1.wav](#challenge-1---file1wav)
+    + [Challenge 1 : File1.wav](#challenge-1 : file1wav)
     + [Challenge 2 : File2.jpg](#challenge-2---file2jpg)
     + [Challenge 3 : File3.jpg](#challenge-3---file3jpg)
     + [Challenge 4 : What is the name of the user?](#challenge-4---what-is-the-name-of-the-user-)
