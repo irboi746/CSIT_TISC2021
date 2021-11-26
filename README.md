@@ -6,16 +6,18 @@
     + [Challenge 3 : File3.jpg](#challenge-3--file3jpg)
     + [Challenge 4 : What is the name of the user?](#challenge-4--what-is-the-name-of-the-user-)
     + [Challenge 5 : Which time was the user's most recent logon? Convert it UTC before submitting.](#challenge-5---which-time-was-the-user-s-most-recent-logon--convert-it-utc-before-submitting)
-    + [Challenge 6 : A 7z archive was deleted, what is the value of the file CRC32 hash that is inside the 7z archive?](#challenge-6---a-7z-archive-was-deleted--what-is-the-value-of-the-file-crc32-hash-that-is-inside-the-7z-archive-)
-    + [Challenge 7 : Question1: How many users have an RID of 1000 or above on the machine? What is the account name for RID of 501? What is the account name for RID of 503?](#challenge-7---question1--how-many-users-have-an-rid-of-1000-or-above-on-the-machine--what-is-the-account-name-for-rid-of-501--what-is-the-account-name-for-rid-of-503-)
-    + [Challenge 8 : Question1: How many times did the user visit https://www.csit.gov.sg/about-csit/who-we-are ? How many times did the user visit https://www.facebook.com ? How many times did the user visit https://www.live.com ?](#challenge-8---question1--how-many-times-did-the-user-visit-https---wwwcsitgovsg-about-csit-who-we-are---how-many-times-did-the-user-visit-https---wwwfacebookcom---how-many-times-did-the-user-visit-https---wwwlivecom--)
-    + [Challenge 9 : A device with the drive letter “Z” was connected as a shared folder in VirtualBox. What was the label of the volume? Perhaps the registry can tell us the "connected" drive?](#challenge-9---a-device-with-the-drive-letter--z--was-connected-as-a-shared-folder-in-virtualbox-what-was-the-label-of-the-volume--perhaps-the-registry-can-tell-us-the--connected--drive-)
-    + [Challenge 10 : A file with SHA1 0D97DBDBA2D35C37F434538E4DFAA06FCCC18A13 is in the VM… somewhere. What is the name of the file that is of interest?](#challenge-10---a-file-with-sha1-0d97dbdba2d35c37f434538e4dfaa06fccc18a13-is-in-the-vm--somewhere-what-is-the-name-of-the-file-that-is-of-interest-)
+    + [Challenge 6 : A 7z archive was deleted, what is the value of the file CRC32 hash that is inside the 7z archive?](#challenge-6--a-7z-archive-was-deleted--what-is-the-value-of-the-file-crc32-hash-that-is-inside-the-7z-archive-)
+    + [Challenge 7 : Question1: How many users have an RID of 1000 or above on the machine? What is the account name for RID of 501? What is the account name for RID of 503?](#challenge-7--question1--how-many-users-have-an-rid-of-1000-or-above-on-the-machine--what-is-the-account-name-for-rid-of-501--what-is-the-account-name-for-rid-of-503-)
+    + [Challenge 8 : Question1: How many times did the user visit https://www.csit.gov.sg/about-csit/who-we-are ? How many times did the user visit https://www.facebook.com ? How many times did the user visit https://www.live.com ?](#challenge-8--question1--how-many-times-did-the-user-visit-https---wwwcsitgovsg-about-csit-who-we-are---how-many-times-did-the-user-visit-https---wwwfacebookcom---how-many-times-did-the-user-visit-https---wwwlivecom--)
+    + [Challenge 9 : A device with the drive letter “Z” was connected as a shared folder in VirtualBox. What was the label of the volume? Perhaps the registry can tell us the "connected" drive?](#challenge-9--a-device-with-the-drive-letter--z--was-connected-as-a-shared-folder-in-virtualbox-what-was-the-label-of-the-volume--perhaps-the-registry-can-tell-us-the--connected--drive-)
+    + [Challenge 10 : A file with SHA1 0D97DBDBA2D35C37F434538E4DFAA06FCCC18A13 is in the VM… somewhere. What is the name of the file that is of interest?](#challenge-10--a-file-with-sha1-0d97dbdba2d35c37f434538e4dfaa06fccc18a13-is-in-the-vm--somewhere-what-is-the-name-of-the-file-that-is-of-interest-)
   * [Level 2](#level-2)
     + [DEE-NA-SAW as a need Part 2](#dee-na-saw-as-a-need-part-2)
     + [DEE-NA-SAW as a need Part 1](#dee-na-saw-as-a-need-part-1)
   * [Level 3](#level-3)
   * [Level 4](#level-4)
+
+#### My first CTF writeup and officially first CTF participated. 
 
 ## Level 1
 ### Challenge 1 : File1.wav
@@ -167,21 +169,30 @@ curl -X POST "http://s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg:18926/xcvlosxgbtfco
 * Logging into the admin page leads to this : \
 ![admin_landing](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L4_5_3.JPG)
 * There is a query box and it seems like it can be manipulated. (SQL Injection) 
-* debug=TRUE leads to debug message as photo \
+* debug=TRUE leads to debug message like the photo below \
 ![debug_error](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L4_5_4_debug_out.JPG)
-* we can come up with the hypothesis that SQL query is 
-```
-SELECT * FROM status WHERE filter=filter AND ID>0
-```
-* from the debug message, we realise that query uses "'" single quote
-* 'OR'1-- yields empty field which means that there is a special character filter
+* From this we can come up 2 hypothesis 
+   1. SQL query is : 
+   ```
+   SELECT * FROM status WHERE filter=filter AND ID>0
+   ```
+   2. The  query uses "'" single quote
+
+* Thus it is time to test the queries : 
+* Tried the most typical SQl Injection Test `' OR 1=1` \
+![7charlimit](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L4_5_4_7char.JPG)
+* It seems like there is a character limit of 7 characters to the injection.
+* 'OR'1-- yields empty field which means that there is a special character filter 
+![OR1--](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L4_5_4_'OR'1--test.JPG)
 * removing "--" yields 
+![OR1](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L4_5_4_'OR'1test.JPG)
 * Thus we seem to be very close.
 * It now seem like we need to test for what are the useable characters and what are not.
 * using 'OR'1 and appending special characters to it we came to # and the flag is out.
 ![Flag](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L4_5_5_flag.JPG)
 * Further investigation and we find out that # actually comments out ID>0 and hence the query will output what is on ID=0  
 
+#### Sadly, my journey in this CTF ends here. Will be back the next time stronger and hopefully able to complete the challenge...
 
 
 
