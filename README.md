@@ -4,7 +4,7 @@
     + [Challenge 1 : File1.wav](#challenge-1--file1wav)
     + [Challenge 2 : File2.jpg](#challenge-2--file2jpg)
     + [Challenge 3 : File3.jpg](#challenge-3--file3jpg)
-    + [Challenge 4 : What is the name of the user?](#challenge-4--what-is-the-name-of-the-user-)
+    + [Challenge 4 : What is the name of the user?](#challenge-4--what-is-the-name-of-the-user)
     + [Challenge 5 : Which time was the user's most recent logon? Convert it UTC before submitting.](#challenge-5---which-time-was-the-user-s-most-recent-logon--convert-it-utc-before-submitting)
     + [Challenge 6 : A 7z archive was deleted, what is the value of the file CRC32 hash that is inside the 7z archive?](#challenge-6--a-7z-archive-was-deleted--what-is-the-value-of-the-file-crc32-hash-that-is-inside-the-7z-archive-)
     + [Challenge 7 : Question1: How many users have an RID of 1000 or above on the machine? What is the account name for RID of 501? What is the account name for RID of 503?](#challenge-7--question1--how-many-users-have-an-rid-of-1000-or-above-on-the-machine--what-is-the-account-name-for-rid-of-501--what-is-the-account-name-for-rid-of-503-)
