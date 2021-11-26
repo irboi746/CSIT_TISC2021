@@ -1,6 +1,5 @@
 # CSIT_TISC2021
 ### My first CTF writeup and officially first CTF participated.
-- [CSIT_TISC2021](#csit-tisc2021)
   * [Level 1](#level-1)
     + [Challenge 1 : File1.wav](#challenge-1--file1wav)
     + [Challenge 2 : File2.jpg](#challenge-2--file2jpg)
