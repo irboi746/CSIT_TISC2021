@@ -1,5 +1,22 @@
-Still in the midst of editing
 # CSIT_TISC2021
+- [CSIT_TISC2021](#csit-tisc2021)
+  * [Level 1](#level-1)
+    + [Challenge 1 : File1.wav](#challenge-1---file1wav)
+    + [Challenge 2 : File2.jpg](#challenge-2---file2jpg)
+    + [Challenge 3 : File3.jpg](#challenge-3---file3jpg)
+    + [Challenge 4 : What is the name of the user?](#challenge-4---what-is-the-name-of-the-user-)
+    + [Challenge 5 : Which time was the user's most recent logon? Convert it UTC before submitting.](#challenge-5---which-time-was-the-user-s-most-recent-logon--convert-it-utc-before-submitting)
+    + [Challenge 6 : A 7z archive was deleted, what is the value of the file CRC32 hash that is inside the 7z archive?](#challenge-6---a-7z-archive-was-deleted--what-is-the-value-of-the-file-crc32-hash-that-is-inside-the-7z-archive-)
+    + [Challenge 7 : Question1: How many users have an RID of 1000 or above on the machine? What is the account name for RID of 501? What is the account name for RID of 503?](#challenge-7---question1--how-many-users-have-an-rid-of-1000-or-above-on-the-machine--what-is-the-account-name-for-rid-of-501--what-is-the-account-name-for-rid-of-503-)
+    + [Challenge 8 : Question1: How many times did the user visit https://www.csit.gov.sg/about-csit/who-we-are ? How many times did the user visit https://www.facebook.com ? How many times did the user visit https://www.live.com ?](#challenge-8---question1--how-many-times-did-the-user-visit-https---wwwcsitgovsg-about-csit-who-we-are---how-many-times-did-the-user-visit-https---wwwfacebookcom---how-many-times-did-the-user-visit-https---wwwlivecom--)
+    + [Challenge 9 : A device with the drive letter “Z” was connected as a shared folder in VirtualBox. What was the label of the volume? Perhaps the registry can tell us the "connected" drive?](#challenge-9---a-device-with-the-drive-letter--z--was-connected-as-a-shared-folder-in-virtualbox-what-was-the-label-of-the-volume--perhaps-the-registry-can-tell-us-the--connected--drive-)
+    + [Challenge 10 : A file with SHA1 0D97DBDBA2D35C37F434538E4DFAA06FCCC18A13 is in the VM… somewhere. What is the name of the file that is of interest?](#challenge-10---a-file-with-sha1-0d97dbdba2d35c37f434538e4dfaa06fccc18a13-is-in-the-vm--somewhere-what-is-the-name-of-the-file-that-is-of-interest-)
+  * [Level 2](#level-2)
+    + [DEE-NA-SAW as a need Part 2](#dee-na-saw-as-a-need-part-2)
+    + [DEE-NA-SAW as a need Part 1](#dee-na-saw-as-a-need-part-1)
+  * [Level 3](#level-3)
+  * [Level 4](#level-4)
+
 ## Level 1
 ### Challenge 1 : File1.wav
 * Use Sonic Visualiser to open .wav file and the morse code appears.
