@@ -1,4 +1,4 @@
-# CSIT_TISC2021 \
+# CSIT_TISC2021 
 ![Participation Badge](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/TISC%20Organising%20Team%20-%20TISC%20Badge%20of%20Participation%20-%202021-11-26.png)
 ### My first CTF writeup and officially first CTF participated.
   * [Level 1](#level-1)
