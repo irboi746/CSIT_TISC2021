@@ -74,7 +74,7 @@ With reference to [this](https://docs.microsoft.com/en-us/troubleshoot/windows-s
 ```
 The answer can be found at MountPoints2 \
 ![MPt2](https://github.com/irboi746/CSIT_TISC2021/blob/main/Resources/L1-challenge9_MountPoints.JPG)
-Flag : **VBoxSvr**
+Flag : **vm-shared**
 
 ### Challenge 10 : A file with SHA1 0D97DBDBA2D35C37F434538E4DFAA06FCCC18A13 is in the VM… somewhere. What is the name of the file that is of interest?
 Using any tool online that can search files by hash.
